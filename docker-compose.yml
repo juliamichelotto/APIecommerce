@@ -1,0 +1,31 @@
+services:
+  api:
+    build: .
+    container_name: ecommerce
+    ports:
+      - "4000:4000"
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - JWT_SECRET=supersecret
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+      - db
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+  redis:
+    image: "redis:latest"
+    container_name: redis
+    ports:
+      - "6379:6379"
+    restart: always
+
+  db:
+    image: "mongo"
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    restart: always
