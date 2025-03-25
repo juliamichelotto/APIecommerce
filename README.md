@@ -11,3 +11,10 @@
 - MongoDB
 - Redis (fila de pedidos)
 - JSONwebtoken (autenticação JWT)
+
+## Pré-requisitos de Instalação:
+Antes de começar, você precisará de:
+- **Node.js**: [Instalar Node.js](https://nodejs.org/)
+
+1. **Clone este repositório:**
+ Utilizando " git clone https://github.com/<seu-user>/ecommerce-api.git "
